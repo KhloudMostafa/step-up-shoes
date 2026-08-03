@@ -1,0 +1,59 @@
+import React from 'react';
+
+const Navbar = () => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-3 sticky-top">
+      <div className="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center">
+        
+        {/* 1. Logo على الشمال */}
+        <a className="navbar-brand fw-bold fs-3 text-dark m-0" href="#!">
+          StepUp
+        </a>
+
+        {/* 2. الأيقونات وزرار القائمة للموبايل على اليمين */}
+        <div className="d-flex align-items-center gap-3 order-lg-last">
+          <button className="btn btn-link text-dark p-0 border-0" type="button">
+            <i className="bi bi-search fs-5"></i>
+          </button>
+          <button className="btn btn-link text-dark p-0 border-0" type="button">
+            <i className="bi bi-cart3 fs-5"></i>
+          </button>
+
+          {/* زرار الموبايل الرئيسي يظهر فقط في الشاشات الصغيرة d-lg-none */}
+          <button
+            className="navbar-toggler border-0 p-0 shadow-none ms-1 d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <i className="bi bi-list fs-2 text-dark"></i>
+          </button>
+        </div>
+
+        {/* 3. الروابط في المنتصف (تتخفى في الموبايل وتفتح بالزرار) */}
+        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul className="navbar-nav gap-3 gap-lg-4 text-center my-3 my-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active fw-bold text-dark" href="#!">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#!">Shop</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#!">Collection</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#!">Customize</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary fw-semibold" href="#!">Dashboard</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
