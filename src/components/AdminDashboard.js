@@ -50,15 +50,22 @@ const AdminDashboard = () => {
         img.src = event.target.result;
         img.onload = () => {
           const canvas = document.createElement('canvas');
-          const MAX_WIDTH = 400;
+          const MAX_WIDTH = 350; // حجم ممتاز ومناسب للرندر
           const scaleFactor = MAX_WIDTH / img.width;
           canvas.width = MAX_WIDTH;
           canvas.height = img.height * scaleFactor;
 
           const ctx = canvas.getContext('2d');
+
+          // 🔹 1. تعبئة الخلفية باللون الأبيض بدلاً من الأسود
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // 🔹 2. رسم صورة المنتج فوق الخلفية البيضاء
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+          // 🔹 3. تحويلها إلى JPEG خفيف الوزن يقبله MockAPI فوراً
+          const compressedBase64 = canvas.toDataURL('image/jpeg', 0.6);
           setFormData((prev) => ({ ...prev, image: compressedBase64 }));
         };
       };
@@ -120,8 +127,8 @@ const AdminDashboard = () => {
   return (
     <div className="container-fluid px-3 px-lg-5 py-4 py-md-5">
       <div className="d-flex align-items-center justify-content-between mb-4">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="btn btn-outline-dark d-inline-flex align-items-center gap-2 rounded-2 px-3 py-2 fw-semibold border-2"
           style={{ fontSize: '0.9rem' }}
         >
@@ -135,7 +142,7 @@ const AdminDashboard = () => {
         <h5 className="fw-bold mb-3 fs-5">{isEditing ? 'Edit Product' : 'Add New Product'}</h5>
         <form onSubmit={handleSubmit}>
           <div className="row g-2 g-md-3">
-            
+
             <div className="col-12 col-md-6">
               <input
                 type="text"
