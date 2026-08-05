@@ -40,7 +40,7 @@ const AdminDashboard = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // 🔹 تقليل حجم الصورة المرفوعة تلقائياً لكي يقبلها MockAPI
+  // 🔹 معالجة رفع الملف وتقليص حجمه لتجنب أخطاء MockAPI
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -50,7 +50,7 @@ const AdminDashboard = () => {
         img.src = event.target.result;
         img.onload = () => {
           const canvas = document.createElement('canvas');
-          const MAX_WIDTH = 400; // تصغير العرض لتقليل الحجم
+          const MAX_WIDTH = 400;
           const scaleFactor = MAX_WIDTH / img.width;
           canvas.width = MAX_WIDTH;
           canvas.height = img.height * scaleFactor;
@@ -58,7 +58,6 @@ const AdminDashboard = () => {
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          // تحويل الصورة المقصوصة إلى Base64 بحجم صغير جداً
           const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
           setFormData((prev) => ({ ...prev, image: compressedBase64 }));
         };
@@ -121,8 +120,8 @@ const AdminDashboard = () => {
   return (
     <div className="container-fluid px-3 px-lg-5 py-4 py-md-5">
       <div className="d-flex align-items-center justify-content-between mb-4">
-        <Link
-          to="/"
+        <Link 
+          to="/" 
           className="btn btn-outline-dark d-inline-flex align-items-center gap-2 rounded-2 px-3 py-2 fw-semibold border-2"
           style={{ fontSize: '0.9rem' }}
         >
@@ -136,7 +135,7 @@ const AdminDashboard = () => {
         <h5 className="fw-bold mb-3 fs-5">{isEditing ? 'Edit Product' : 'Add New Product'}</h5>
         <form onSubmit={handleSubmit}>
           <div className="row g-2 g-md-3">
-
+            
             <div className="col-12 col-md-6">
               <input
                 type="text"
@@ -186,26 +185,28 @@ const AdminDashboard = () => {
               </select>
             </div>
 
-            {/* إدخال رابط الصورة مباشرة */}
-            <div className="col-12 col-md-4">
-              <input
-                type="text"
-                name="image"
-                placeholder="Image URL (e.g. https://...)"
-                className="form-control"
-                value={formData.image}
-                onChange={handleChange}
-              />
-            </div>
-
-            {/* أو رفع ملف صورة وتقليص حجمها تلقائياً */}
-            <div className="col-12 col-md-4">
-              <input
-                type="file"
-                accept="image/*"
-                className="form-control"
-                onChange={handleImageUpload}
-              />
+            {/* 🔹 حقل موحد: لصق رابط أو رفع ملف عبر زر Upload */}
+            <div className="col-12 col-md-8">
+              <div className="input-group">
+                <input
+                  type="text"
+                  name="image"
+                  placeholder="Paste Image URL or click Upload ->"
+                  className="form-control"
+                  value={formData.image}
+                  onChange={handleChange}
+                />
+                <label className="btn btn-dark mb-0 d-flex align-items-center gap-2 px-3 cursor-pointer">
+                  <i className="bi bi-upload"></i>
+                  Upload
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="d-none"
+                    onChange={handleImageUpload}
+                  />
+                </label>
+              </div>
             </div>
 
             <div className="col-12 mt-3">
