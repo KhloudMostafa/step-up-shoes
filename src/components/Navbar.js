@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-transparent py-3 sticky-top">
-      <div className="container-fluid px-3 px-lg-5 d-flex justify-content-between align-items-center">
+      <div className="container-fluid px-4 px-lg-5 ms-lg-4 d-flex justify-content-between align-items-center">
         
         {/* 1. Logo على الشمال */}
         <a className="navbar-brand fw-bold fs-3 text-dark m-0" href="#!">
@@ -46,7 +47,9 @@ const Navbar = () => {
               <a className="nav-link text-secondary" href="#!">Customize</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-secondary fw-semibold" href="#!">Dashboard</a>
+              <Link to="/admin" className="btn btn-dark btn-sm">
+                Dashboard
+              </Link>
             </li>
           </ul>
         </div>

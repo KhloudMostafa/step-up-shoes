@@ -8,8 +8,8 @@ const HeroSection = () => {
         <div className="row g-0 align-items-center">
           
           {/* الجانب الأيسر - النص والزرار */}
-          <div className="col-lg-5 p-4 p-lg-5 d-flex flex-column justify-content-center text-center text-lg-start z-2 bg-white">
-            <h1 className="fw-bold text-dark mb-3 ms-lg-4" style={{ fontSize: 'calc(2.2rem + 1.8vw)', lineHeight: '1.15' }}>
+          <div className="col-lg-5 px-4 p-lg-5 d-flex flex-column justify-content-center text-center text-lg-start z-2 bg-white">
+            <h1 className="fw-bold text-dark mb-4 ms-lg-4" style={{ fontSize: 'calc(2.2rem + 1.8vw)', lineHeight: '1.15' }}>
               Find Your <br className="d-none d-sm-inline" />
               Sole Mate <br className="d-none d-sm-inline" />
               With Us
@@ -17,7 +17,7 @@ const HeroSection = () => {
             <p className="mb-4 ms-lg-4 pe-lg-4 text-secondary" style={{ fontSize: '1.1rem' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
             </p>
-            <div className="ms-lg-4">
+            <div className='ms-lg-4'>
               <a href="#!" className="btn btn-dark px-4 py-3 rounded-1 fw-bold fs-6">
                 Shop Now
               </a>
@@ -41,7 +41,7 @@ const HeroSection = () => {
                 letterSpacing: '8px',
                 writingMode: 'vertical-rl',
                 transform: 'rotate(180deg)',
-                left: '10px',
+                left: '-22px',
                 top: '50%',
                 translate: '0 -50%',
                 zIndex: 1,
