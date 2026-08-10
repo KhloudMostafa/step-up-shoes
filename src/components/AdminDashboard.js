@@ -135,17 +135,17 @@ const AdminDashboard = () => {
     try {
       if (isEditing) {
         await updateProduct(formData.id, payload);
-        triggerAlert('تم تعديل المنتج بنجاح!', 'success');
+        triggerAlert('Product Updated Successfully!', 'success');
       } else {
         await createProduct(payload);
-        triggerAlert('تم إضافة المنتج بنجاح!', 'success');
+        triggerAlert('Product Added Successfully!', 'success');
       }
 
       setShowFormModal(false);
       await loadProducts();
     } catch (err) {
       console.error("Error submitting form:", err);
-      triggerAlert('حدث خطأ أثناء حفظ البيانات', 'danger');
+      triggerAlert('An Error Ocured While Saving Data!', 'danger');
     }
   };
 
@@ -153,11 +153,11 @@ const AdminDashboard = () => {
     if (productToDelete) {
       try {
         await deleteProduct(productToDelete);
-        triggerAlert('تم حذف المنتج بنجاح!', 'warning');
+        triggerAlert('Product Deleted Successfully!', 'warning');
         await loadProducts();
       } catch (err) {
         console.error("Error deleting product:", err);
-        triggerAlert('حدث خطأ أثناء الحذف', 'danger');
+        triggerAlert('An Error Ocured While Deleting!', 'danger');
       }
     }
     setShowDeleteModal(false);
