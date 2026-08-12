@@ -3,8 +3,15 @@ import heroShoeImg from '../images/hero-shoe.png';
 
 const HeroSection = () => {
   return (
-    <section className="hero-section flex-grow-1 d-flex align-items-center">
-      <div className="container-fluid p-0 w-100">
+    <section className="hero-section flex-grow-1 d-flex align-items-center position-relative">
+      
+      {/* 🔹 الخلفية الرمادية للجانب الأيمن في الشاشات الكبيرة (تطابق الـ Navbar) */}
+      <div 
+        className="position-absolute top-0 end-0 h-100 d-none d-lg-block" 
+        style={{ width: '58.333%', backgroundColor: '#ebebeb', zIndex: 0 }}
+      ></div>
+
+      <div className="container-fluid p-0 w-100 position-relative z-1">
         <div className="row g-0 align-items-center">
           
           {/* الجانب الأيسر - النص والزرار */}
@@ -26,10 +33,9 @@ const HeroSection = () => {
 
           {/* الجانب الأيمن - الكوتشي والكلمة الرأسية */}
           <div 
-            className="col-lg-7 position-relative d-flex flex-column align-items-center justify-content-center py-5 bg-light-mobile"
-            style={{ backgroundColor: 'inherit' }}
+            className="col-lg-7 position-relative d-flex flex-column align-items-center justify-content-center py-5"
           >
-            {/* خلفية رمادية تظهر فقط في الموبايل للسكشن ده */}
+            {/* خلفية رمادية تظهر فقط في الموبايل */}
             <div className="position-absolute top-0 start-0 w-100 h-100 d-lg-none" style={{ backgroundColor: '#ebebeb', zIndex: 0 }}></div>
 
             {/* كلمة ULTIMATE الرأسية */}
