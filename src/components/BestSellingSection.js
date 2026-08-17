@@ -32,10 +32,8 @@ const BestSellingSection = () => {
   return (
     <section className="py-5">
       <div className="container">
-        {/* العنوان */}
         <h2 className="fw-bold text-center mb-4">— Best Selling —</h2>
 
-        {/* أزرار الأقسام بتصميم Figma (مربعات) */}
         <div className="d-flex justify-content-center gap-3 mb-5">
           {categories.map((cat) => (
             <button
@@ -51,7 +49,6 @@ const BestSellingSection = () => {
           ))}
         </div>
 
-        {/* عرض المنتجات */}
         {loading ? (
           <div className="text-center py-5">Loading products...</div>
         ) : filteredProducts.length === 0 ? (
@@ -64,7 +61,6 @@ const BestSellingSection = () => {
               <div className="col-12 col-md-4" key={item.id}>
                 <div className="card h-100 border rounded-4 p-3 position-relative shadow-sm">
                   
-                  {/* شارة New وزر المفضلة */}
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <span className="badge bg-dark rounded-1 px-2 py-1 fw-normal">New</span>
                     <button className="btn btn-link text-dark p-0 border-0">
@@ -72,7 +68,6 @@ const BestSellingSection = () => {
                     </button>
                   </div>
 
-                  {/* صورة المنتج */}
                   <div className="text-center my-3" style={{ height: '180px' }}>
                     <img
                       src={item.image || 'https://via.placeholder.com/200'}
@@ -81,7 +76,6 @@ const BestSellingSection = () => {
                     />
                   </div>
 
-                  {/* معلومات المنتج */}
                   <div className="mt-auto">
                     <h6 className="fw-bold text-dark mb-2">{item.name}</h6>
                     
@@ -93,7 +87,6 @@ const BestSellingSection = () => {
                         )}
                       </div>
 
-                      {/* زر السهم الأسود */}
                       <button className="btn btn-dark rounded-circle d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
                         <i className="bi bi-arrow-up-right fs-6"></i>
                       </button>

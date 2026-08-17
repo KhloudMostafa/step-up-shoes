@@ -5,7 +5,6 @@ const HeroSection = () => {
   return (
     <section className="hero-section flex-grow-1 d-flex align-items-center position-relative">
       
-      {/* 🔹 الخلفية الرمادية للجانب الأيمن في الشاشات الكبيرة (تطابق الـ Navbar) */}
       <div 
         className="position-absolute top-0 end-0 h-100 d-none d-lg-block" 
         style={{ width: '58.333%', backgroundColor: '#ebebeb', zIndex: 0 }}
@@ -14,7 +13,6 @@ const HeroSection = () => {
       <div className="container-fluid p-0 w-100 position-relative z-1">
         <div className="row g-0 align-items-center">
           
-          {/* الجانب الأيسر - النص والزرار */}
           <div className="col-lg-5 px-4 p-lg-5 d-flex flex-column justify-content-center text-center text-lg-start z-2 bg-white">
             <h1 className="fw-bold text-dark mb-4 ms-lg-4" style={{ fontSize: 'calc(2.2rem + 1.8vw)', lineHeight: '1.15' }}>
               Find Your <br className="d-none d-sm-inline" />
@@ -31,14 +29,11 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* الجانب الأيمن - الكوتشي والكلمة الرأسية */}
           <div 
             className="col-lg-7 position-relative d-flex flex-column align-items-center justify-content-center py-5"
           >
-            {/* خلفية رمادية تظهر فقط في الموبايل */}
             <div className="position-absolute top-0 start-0 w-100 h-100 d-lg-none" style={{ backgroundColor: '#ebebeb', zIndex: 0 }}></div>
 
-            {/* كلمة ULTIMATE الرأسية */}
             <span 
               className="position-absolute text-white user-select-none"
               style={{
@@ -57,7 +52,6 @@ const HeroSection = () => {
               ULTIMATE
             </span>
 
-            {/* صورة الكوتشي */}
             <div className="position-relative d-flex justify-content-center align-items-center p-3" style={{ zIndex: 2 }}>
               <img 
                 src={heroShoeImg} 
@@ -70,7 +64,6 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* النص والسعر */}
             <div className="mt-3 text-center" style={{ zIndex: 2 }}>
               <h3 className="fw-bold mb-1 text-dark fs-4">Trendy StepUp Pro</h3>
               <p className="text-secondary fw-bold fs-5 m-0">₹ 3999.00</p>

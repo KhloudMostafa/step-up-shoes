@@ -5,17 +5,14 @@ const Footer = () => {
     <footer className="bg-black text-white pt-5 pb-4">
       <div className="container-fluid px-3 px-lg-5 ms-lg-4">
         
-        {/* المحتوى الرئيسي للـ Footer */}
         <div className="row g-4 justify-content-between align-items-start pb-4">
           
-          {/* 1️⃣ العمود الأول: اللوجو والوصف وأيقونات السوشيال */}
           <div className="col-12 col-md-4 text-center text-md-start">
             <h3 className="fw-bold fs-2 mb-3">StepUp</h3>
             <p className="text-secondary small mb-4" style={{ maxWidth: '300px', margin: '0 auto 1.5rem 0' }}>
               Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
             </p>
             
-            {/* أيقونات السوشيال */}
             <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
               <a 
                 href="#facebook" 
@@ -34,11 +31,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 2️⃣ العمود الثاني: النيوذليتر (Subscribe for news letter) */}
           <div className="col-12 col-md-5 text-center">
             <h6 className="fw-normal mb-3 fs-6">Subscribe for news letter</h6>
             
-            {/* صندوق الإدخال والزر مدمجين */}
             <div className="bg-white rounded-1 p-1 d-flex align-items-center mx-auto" style={{ maxWidth: '400px' }}>
               <input
                 type="email"
@@ -56,7 +51,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 3️⃣ العمود الثالث: وروابط الوصول السريع (Quick Links) */}
           <div className="col-12 col-md-2 text-center text-md-start">
             <h6 className="fw-normal mb-3 fs-6">Quick Links</h6>
             <ul className="list-unstyled d-flex flex-column gap-2 mb-0" style={{ fontSize: '0.82rem' }}>
@@ -70,7 +64,6 @@ const Footer = () => {
 
         </div>
 
-        {/* خط وحفظ الحقوق أسفل الـ Footer */}
         <div className="text-center pt-3 mt-3 border-top border-secondary border-opacity-25">
           <p className="text-secondary mb-0" style={{ fontSize: '0.75rem' }}>
             www.stepup.com©all right reserve

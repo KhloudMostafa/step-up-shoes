@@ -44,7 +44,6 @@ const ExploreSection = () => {
     <section className="py-5 bg-white position-relative">
       <div className="container-fluid px-3 px-lg-5 pt-5">
         
-        {/* البوكس الرئيسي الملون */}
         <div 
           className="rounded-4 position-relative p-4 p-md-5 text-white"
           style={{ 
@@ -54,7 +53,6 @@ const ExploreSection = () => {
             overflow: 'visible'
           }}
         >
-          {/* النص الخلفي StepUP */}
           <span 
             className="position-absolute bottom-0 start-50 translate-middle-x fw-black user-select-none d-none d-md-block"
             style={{ 
@@ -69,7 +67,6 @@ const ExploreSection = () => {
             StepUP
           </span>
 
-          {/* أسهم التنقل */}
           <button 
             onClick={handlePrev}
             className="btn border-0 text-white position-absolute start-0 top-50 translate-middle-y ms-1 ms-md-3 z-3 p-0 opacity-75 hover-opacity-100"
@@ -86,7 +83,6 @@ const ExploreSection = () => {
             <i className="bi bi-chevron-right"></i>
           </button>
 
-          {/* 1️⃣ صورة الرجل على الموبايل */}
           <div className="d-block d-md-none text-center position-relative z-2" style={{ marginTop: '-100px', marginBottom: '10px' }}>
             <img 
               src={activeSlide.personImg} 
@@ -100,7 +96,6 @@ const ExploreSection = () => {
             />
           </div>
 
-          {/* 2️⃣ صورة الرجل على الشاشات الكبيرة */}
           <div 
             className="d-none d-md-flex position-absolute start-0 top-0 justify-content-start"
             style={{ width: '45%', height: '100%', pointerEvents: 'none', zIndex: 2 }}
@@ -121,7 +116,6 @@ const ExploreSection = () => {
             />
           </div>
 
-          {/* محتوى النصوص والأزرار */}
           <div className="row align-items-center h-100 position-relative z-2 g-4">
             <div className="col-12 col-md-7 offset-md-5 text-center text-md-start ps-md-4">
               <h2 className="fw-bold display-5 mb-3" style={{ maxWidth: '500px', lineHeight: '1.2' }}>
@@ -139,7 +133,6 @@ const ExploreSection = () => {
                 Explore
               </button>
 
-              {/* صور الكوتشيات الصغرى */}
               <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-2 gap-md-3" style={{ pointerEvents: 'auto' }}>
                 {activeSlide.shoes.map((shoeImg, idx) => (
                   <div 

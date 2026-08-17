@@ -6,12 +6,10 @@ const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // حالات التحكم في النوافذ المنبثقة
   const [showFormModal, setShowFormModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
 
-  // حالة الرسائل التنبيهية (Alerts)
   const [alertInfo, setAlertInfo] = useState({ show: false, message: '', type: 'success' });
 
   const [formData, setFormData] = useState({
@@ -84,7 +82,6 @@ const AdminDashboard = () => {
     }
   };
 
-  // فتح مودال إضافة منتج جديد
   const openAddModal = () => {
     setFormData({
       id: null,
@@ -99,7 +96,6 @@ const AdminDashboard = () => {
     setShowFormModal(true);
   };
 
-  // فتح مودال التعديل
   const handleEdit = (product) => {
     setFormData({
       id: product.id,
@@ -167,7 +163,6 @@ const AdminDashboard = () => {
   return (
     <div className="container-fluid px-3 px-lg-5 py-4 py-md-5 position-relative">
       
-      {/* 🔹 رسالة التنبيه العائمة (Alert Notification) */}
       {alertInfo.show && (
         <div 
           className={`alert alert-${alertInfo.type} alert-dismissible fade show position-fixed top-0 end-0 m-4 shadow-lg z-3`}
@@ -179,7 +174,6 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* الشريط العلوي */}
       <div className="d-flex align-items-center justify-content-between mb-4">
         <Link
           to="/"
@@ -192,7 +186,6 @@ const AdminDashboard = () => {
         <h3 className="fw-bold m-0 fs-4 text-dark">Admin Dashboard</h3>
       </div>
 
-      {/* 🔹 زر إضافة منتج جديد */}
       <div className="d-flex justify-content-between align-items-center mb-4 bg-light p-3 rounded-3 shadow-sm">
         <h5 className="fw-bold m-0 text-dark">Products List</h5>
         <button 
@@ -204,7 +197,6 @@ const AdminDashboard = () => {
         </button>
       </div>
 
-      {/* جدول المنتجات */}
       <div className="table-responsive bg-white rounded-3 shadow-sm p-2 p-md-3">
         {loading ? (
           <div className="text-center py-4">
@@ -261,7 +253,6 @@ const AdminDashboard = () => {
         )}
       </div>
 
-      {/* 🔹 نافذة إضافة/تعديل المنتج المنبثقة (Modal) */}
       {showFormModal && (
         <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1050 }}>
           <div className="modal-dialog modal-dialog-centered modal-lg px-3">
@@ -388,7 +379,6 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* نافذة تأكيد الحذف المنبثقة */}
       {showDeleteModal && (
         <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1050 }}>
           <div className="modal-dialog modal-dialog-centered px-3">

@@ -1,12 +1,10 @@
 import React from 'react';
 
-// استيراد الصور من مجلد images
 import ajioLogo from '../images/AJIO.png';
 import amazonLogo from '../images/Amazon.png';
 import ebayLogo from '../images/ebay.png';
 
 const BrandsSection = () => {
-  // حددنا ارتفاع مناسب لكل لوجو بشكل مستقل عشان يطلعوا بنفس الحجم البصري
   const brandLogos = [
     { src: ebayLogo, alt: 'eBay', hDesk: '60px' , hMob: '30px' },
     { src: amazonLogo, alt: 'Amazon', hDesk: '55px' , hMob: '30px' },
@@ -33,7 +31,6 @@ const BrandsSection = () => {
                   opacity: 0.95,
                 }}
               />
-              {/* نسخة الموبايل بحجم أصغر ومظبوط */}
               <img
                 src={logo.src}
                 alt={logo.alt}

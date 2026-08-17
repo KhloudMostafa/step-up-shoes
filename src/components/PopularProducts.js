@@ -6,7 +6,6 @@ const PopularProducts = () => {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 🔹 فحص حجم الشاشة تلقائياً عند التحميل وعند تغيير الحجم
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const PopularProducts = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // عدد العناصر حسب نوع الجهاز (1 للموبايل، 3 للشاشات الكبيرة)
   const itemsPerPage = isMobile ? 1 : 3;
 
   useEffect(() => {
@@ -62,7 +60,6 @@ const PopularProducts = () => {
       <div className="container-fluid px-3 px-lg-5">
         <div className="row align-items-center">
 
-          {/* الجانب الأيسر: النصوص والزر */}
           <div className="col-12 col-lg-4 mb-4 mb-lg-0">
             <span className="text-muted fw-semibold text-uppercase small">— Our Trending Shoe</span>
             <h2 className="fw-bold display-6 text-dark mt-2 mb-3">Most Popular Products</h2>
@@ -72,7 +69,6 @@ const PopularProducts = () => {
             <button className="btn btn-dark rounded-2 px-4 py-2 fw-semibold">Explore</button>
           </div>
 
-          {/* الجانب الأيمن: السلايدر */}
           <div className="col-12 col-lg-8">
             {loading ? (
               <div className="text-center py-5">
@@ -85,7 +81,6 @@ const PopularProducts = () => {
             ) : (
               <div className="position-relative px-md-4">
                 
-                {/* 🔹 أسهم الجوانب (تظهر في شاشات الكمبيوتر فقط) */}
                 {!isMobile && trendingProducts.length > 3 && (
                   <>
                     <button 
@@ -106,7 +101,6 @@ const PopularProducts = () => {
                   </>
                 )}
 
-                {/* 🔹 عرض المنتجات: 3 كروت في الكمبيوتر وكارت واحد في الموبايل */}
                 <div className="row g-3">
                   {trendingProducts.slice(currentIndex, currentIndex + itemsPerPage).map((product) => (
                     <div key={product.id} className={isMobile ? 'col-12' : 'col-12 col-md-4'}>
@@ -133,10 +127,8 @@ const PopularProducts = () => {
                   ))}
                 </div>
 
-                {/* 🔹 أزرار التحكم السفلية */}
                 <div className="d-flex align-items-center justify-content-center gap-3 mt-4">
                   
-                  {/* سهم يسار سفلي (للموبايل فقط) */}
                   {isMobile && trendingProducts.length > 1 && (
                     <button 
                       onClick={prevSlide}
@@ -147,7 +139,6 @@ const PopularProducts = () => {
                     </button>
                   )}
 
-                  {/* نقاط الـ Pagination (تظهر للجميع) */}
                   {trendingProducts.length > itemsPerPage && (
                     <div className="d-flex align-items-center gap-2">
                       {Array.from({ length: totalSteps }).map((_, idx) => (
@@ -167,7 +158,6 @@ const PopularProducts = () => {
                     </div>
                   )}
 
-                  {/* سهم يمين سفلي (للموبايل فقط) */}
                   {isMobile && trendingProducts.length > 1 && (
                     <button 
                       onClick={nextSlide}

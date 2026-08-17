@@ -25,10 +25,8 @@ const CustomerReviewSection = () => {
 
   return (
     <section className="py-5 bg-white">
-      {/* استخدام container ليطابق محاذاة الفيجما والشاشة الكبيرة */}
       <div className="container-fluid px-3 px-lg-5">
         
-        {/* العنوان الرئيسي */}
         <div className="text-center mb-4 mb-md-5">
           <h2 className="fw-bold d-inline-flex align-items-center gap-2 fs-3 fs-md-2">
             <span className="text-muted fs-4">—</span> 
@@ -37,7 +35,6 @@ const CustomerReviewSection = () => {
           </h2>
         </div>
 
-        {/* شبكة الكروت (col-md-6 لملء نصف العرض بالضبط) */}
         <div className="row g-4">
           {reviews.map((review) => (
             <div key={review.id} className="col-12 col-md-6">
@@ -45,7 +42,6 @@ const CustomerReviewSection = () => {
                 className="p-4 rounded-4 d-flex flex-column flex-sm-row align-items-center align-items-sm-start gap-3 h-100"
                 style={{ backgroundColor: '#F6F6F6', border: '2px solid #dedede' }}
               >
-                {/* صورة الشخص */}
                 <div className="flex-shrink-0">
                   <img
                     src={review.img}
@@ -55,13 +51,11 @@ const CustomerReviewSection = () => {
                   />
                 </div>
 
-                {/* تفاصيل العميل */}
                 <div className="text-center text-sm-start">
                   <h6 className="fw-bold mb-1 text-dark fs-6" style={{ fontSize: '2rem' }}>
                     {review.name}
                   </h6>
 
-                  {/* النجوم */}
                   <div className="d-flex align-items-center justify-content-center justify-content-sm-start gap-1 mb-2 text-warning" style={{ fontSize: '12px' }}>
                     <i className="bi bi-star-fill"></i>
                     <i className="bi bi-star-fill"></i>
@@ -79,7 +73,6 @@ const CustomerReviewSection = () => {
           ))}
         </div>
 
-        {/* Dots Carousel */}
         <div className="d-flex justify-content-center align-items-center gap-2 mt-4 pt-3">
           {[0, 1, 2, 3].map((dotIdx) => (
             <span
